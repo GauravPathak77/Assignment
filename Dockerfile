@@ -1,23 +1,20 @@
+# Base image
 FROM node:19
 
-# working directory for the server
-WORKDIR /app/server
+# Set the working directory in the container
+WORKDIR /app
 
-COPY server/package*.json ./
+# Copy the package.json and package-lock.json files
+COPY package*.json ./
 
+# Install dependencies
 RUN npm install
 
-COPY server .
+# Copy the rest of the app files
+COPY . .
 
-# working directory for the client
-WORKDIR /app/client
-
-COPY client/package*.json ./
-
-RUN npm install
-
-COPY client .
-
+# Expose the port your app listens on (assuming it's 3000)
 EXPOSE 3000
 
-CMD ["npm", "run", "start"]
+# Start the app with the 'npm start' command
+CMD [ "npm", "start" ]
