@@ -1,38 +1,44 @@
-.App {
+.title {
   text-align: center;
+  font-family: 'Dancing Script', cursive;
+  font-size: 4vw;
+  background: #121FCF;
+  background: linear-gradient(to right, #121FCF 20%, #CF1512 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color:transparent;
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+table{
+  border: 1px solid black;
+  box-shadow: 10px 10px 6px rgba(0, 0, 0, 0.1), 10px 10px 30px rgba(0, 0, 0, 0.08);
+  font-family: 'Dancing Script', cursive;
+  margin: 5%;
+  padding: 2%;
+  background-color: #2A2F4F;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+thead{
+  background-color: #917FB3;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+tbody{
+  background-color: #E5BEEC;
+}
+.firstCol{
+  background-color: #FDE2F3;
 }
 
-.App-link {
-  color: #61dafb;
+th,td {
+  border: 1px solid black;
+  border-radius: 10%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+hr {
+  height: 50px;
+  width: 30%;
+  position:relative;
+  bottom: 2vw;
+  border:#2A2F4F;
+  border-top: 2px dotted #999;
 }
