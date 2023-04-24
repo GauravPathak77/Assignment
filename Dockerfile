@@ -1,11 +1,23 @@
 FROM node:19
 
-COPY . /app/
+# working directory for the server
+WORKDIR /app/server
 
-WORKDIR /app
+COPY server/package*.json ./
 
 RUN npm install
 
-RUN apt-get update && apt-get install -y sqlite3
+COPY server .
 
-CMD ["node","app.js"]
+# working directory for the client
+WORKDIR /app/client
+
+COPY client/package*.json ./
+
+RUN npm install
+
+COPY client .
+
+EXPOSE 3000
+
+CMD ["npm", "run", "start"]
